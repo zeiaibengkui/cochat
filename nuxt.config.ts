@@ -6,6 +6,7 @@ export default defineNuxtConfig({
 		"vuetify-nuxt-module",
 		"@pinia/nuxt",
 		"@pinia-plugin-persistedstate/nuxt",
+		"@sidebase/nuxt-auth",
 	],
 	vuetify: {
 		moduleOptions: {},
@@ -17,4 +18,9 @@ export default defineNuxtConfig({
 		},
 	},
 	piniaPersistedstate: { storage: "localStorage" },
+	auth: {
+		globalAppMiddleware: true,
+		isEnabled: true,
+		provider: { type: "authjs", addDefaultCallbackUrl: true },
+	},
 });

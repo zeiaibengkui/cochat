@@ -1,19 +1,28 @@
+import { getServerSession } from "#auth";
 import { Graph, graphs, nodes } from "../db/schema/graph";
 
-export default defineEventHandler<{ body: Graph["property"] }>(async event => {
+export default defineEventHandler<{ body: Graph["property"] }>(async (event) => {
+	const session = await getServerSession(event);
+	if (!session?.user?.id) {
+		throw createError({ statusCode: 401, message: "Unauthorized" });
+	}
+
 	const body = await readBody(event);
 
-	const a = await db
+	const [rootNode] = await db
 		.insert(nodes)
-		.values({ property: { text: body.topic + " - root" } })
+		.values({
+			author: session.user.name ?? session.user.email ?? "unknown",
+			property: { text: body.topic, role: "user" as const },
+		})
 		.returning();
 
-	const root = a[0]?.id;
-	if (!root) throw new Error("insert node failed");
+	if (!rootNode) throw createError({ statusCode: 500, message: "Failed to create root node" });
 
-	const graph = await db
+	const [graph] = await db
 		.insert(graphs)
-		.values({ property: body, root: root })
+		.values({ property: body, root: rootNode.id })
 		.returning();
-	return { graph: graph[0]!.property, root: root };
+
+	return graph;
 });

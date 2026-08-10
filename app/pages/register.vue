@@ -1,22 +1,6 @@
+<!-- Redirect to combined login/register page -->
 <script lang="ts" setup>
-const msg = ref("msg");
-const options = toRef({ name: "", email: "" });
-async function submit(e: SubmitEvent) {
-  e.preventDefault();
-  msg.value = await $fetch("/api/addUser", {
-    body: options.value,
-    method: "post",
-  });
-}
+definePageMeta({ auth: { unauthenticatedOnly: true } });
+
+await navigateTo("/login", { replace: true });
 </script>
-
-<template>
-  <VForm @submit="submit">
-    <VTextField v-model="options.name" label="Name" />
-    <VTextField v-model="options.email" label="Email" />
-    <VBtn type="submit">Register</VBtn>
-  </VForm>
-  msg:<VCode>{{ msg }}</VCode>
-</template>
-
-<style lang="scss" scoped></style>

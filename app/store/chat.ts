@@ -14,6 +14,7 @@ export const useChatStore = defineStore("chat", {
 		systemPrompt: "You are a helpful assistant.",
 		selectedModel: "gpt-4o-mini",
 		chatMessages: [] as ChatMessage[],
+			showAllBranches: false,
 	}),
 	actions: {
 		clearMessages() {
