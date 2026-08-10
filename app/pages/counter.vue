@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { useMainStore } from "@/store/index";
-const mainStore = useMainStore();
+import { useChatStore } from "~/store/chat";
+const mainStore = useChatStore();
 const { data } = useFetch("/api/hello");
 </script>
