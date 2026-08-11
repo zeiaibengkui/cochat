@@ -15,7 +15,6 @@
     "@sidebase/nuxt-auth": "1.3.1",
     "bcryptjs": "^3.0.3",
     "cytoscape": "^3.34.0",
-    "cytoscape-cose-bilkent": "^4.1.0",
     "dotenv": "^17.4.2",
     "drizzle-orm": "1.0.0-rc.4",
     "github": "link:next-auth/providers/github",
@@ -35,7 +34,13 @@
     "@types/cytoscape": "^3.31.0",
     "@types/pg": "^8.20.4",
     "drizzle-kit": "1.0.0-rc.4",
+    "sass-embedded": "^1.100.0",
     "tsx": "^4.23.8",
     "vuetify": "^4.1.7"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "next-auth@4.24.15": "patches/next-auth@4.24.15.patch"
+    }
   }
 }

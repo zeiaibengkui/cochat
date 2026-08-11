@@ -1,0 +1,19 @@
+diff --git a/package.json b/package.json
+index a1b2c3d..e4f5g6h 100644
+--- a/package.json
++++ b/package.json
+@@ -53,6 +53,14 @@
+       "types": "./client/_utils.d.ts",
+       "default": "./client/_utils.js"
+     },
++    "./core": {
++      "types": "./core/index.d.ts",
++      "default": "./core/index.js"
++    },
++    "./core/*": {
++      "types": "./core/*.d.ts",
++      "default": "./core/*.js"
++    },
+     "./providers/*": {
+       "types": "./providers/*.d.ts",
+       "default": "./providers/*.js"
