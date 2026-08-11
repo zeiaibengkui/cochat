@@ -1,0 +1,60 @@
+{
+    "$schema": "./node_modules/oxlint/configuration_schema.json",
+    "plugins": ["typescript", "unicorn", "oxc", "import", "vue"],
+    "categories": {
+        "correctness": "error",
+        "suspicious": "warn",
+        "perf": "warn",
+        "style": "off",
+        "pedantic": "off",
+        "restriction": "off"
+    },
+    "rules": {
+        "no-unused-vars": "error",
+        "no-console": "off",
+        "no-debugger": "error",
+        "eqeqeq": ["error", "always", { "null": "never" }],
+        "no-var": "error",
+        "prefer-const": "error",
+        "no-duplicate-imports": "error",
+        "typescript/no-non-null-assertion": "off",
+        "typescript/consistent-type-imports": "off",
+        "typescript/no-explicit-any": "off",
+        "unicorn/filename-case": "off",
+        "import/no-default-export": "off"
+    },
+    "ignorePatterns": ["node_modules", ".nuxt", "dist", ".output", "patches", "*.min.*"],
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2024": true
+    },
+    "globals": {
+        "defineNuxtPlugin": "readonly",
+        "defineNuxtConfig": "readonly",
+        "definePageMeta": "readonly",
+        "useFetch": "readonly",
+        "useRoute": "readonly",
+        "useRouter": "readonly",
+        "navigateTo": "readonly",
+        "ref": "readonly",
+        "computed": "readonly",
+        "watch": "readonly",
+        "watchEffect": "readonly",
+        "onMounted": "readonly",
+        "onUnmounted": "readonly",
+        "nextTick": "readonly",
+        "defineEventHandler": "readonly",
+        "readBody": "readonly",
+        "getQuery": "readonly",
+        "createError": "readonly",
+        "getServerSession": "readonly",
+        "useRuntimeConfig": "readonly",
+        "useAuth": "readonly",
+        "signOut": "readonly",
+        "signIn": "readonly",
+        "NuxtAuthHandler": "readonly",
+        "$fetch": "readonly",
+        "useNuxtApp": "readonly"
+    }
+}

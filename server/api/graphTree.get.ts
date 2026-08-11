@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
 
 	// Build edges from parent relationships
 	const edges = allNodes
-		.filter(n => n.parent !== null)
+		.filter(n => n.parent != null)
 		.map(n => ({ source: n.parent!, target: n.id }));
 
 	return { nodes: allNodes, edges };
