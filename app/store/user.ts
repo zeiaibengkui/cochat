@@ -1,5 +1,5 @@
 export default defineStore("user", {
-	state: () => ({
-		id: 0,
-	}),
+    state: () => ({
+        id: 0,
+    }),
 });

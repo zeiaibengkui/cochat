@@ -2,20 +2,17 @@
     <ClientOnly>
         <VApp>
             <VAppBar>
-                <v-app-bar-nav-icon
-                    variant="text"
-                    @click.stop="drawer = !drawer" />
+                <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer" />
                 COCHAT
                 <v-spacer />
                 <v-btn
                     :prepend-icon="
-                        theme.current?.value?.dark
-                            ? 'mdi-weather-sunny'
-                            : 'mdi-weather-night'
+                        theme.current?.value?.dark ? 'mdi-weather-sunny' : 'mdi-weather-night'
                     "
                     text="Toggle Theme"
                     slim
-                    @click="theme.toggle()" />
+                    @click="theme.toggle()"
+                />
             </VAppBar>
 
             <v-navigation-drawer v-model="drawer" temporary>
@@ -28,27 +25,28 @@
                         <v-list-item
                             to="/mine"
                             title="My Account"
-                            prepend-icon="mdi-account-circle" />
+                            prepend-icon="mdi-account-circle"
+                        />
                         <v-list-item>
                             <template #title
                                 ><span class="text-medium-emphasis text-caption"
                                     >Signed in as</span
                                 ></template
                             >
-                            <template #subtitle>{{
-                                session?.user?.email
-                            }}</template>
+                            <template #subtitle>{{ session?.user?.email }}</template>
                         </v-list-item>
                         <v-list-item
                             @click="signOut()"
                             title="Sign Out"
-                            prepend-icon="mdi-logout" />
+                            prepend-icon="mdi-logout"
+                        />
                     </template>
                     <template v-else>
                         <v-list-item
                             to="/login"
                             title="Sign In / Register"
-                            prepend-icon="mdi-login" />
+                            prepend-icon="mdi-login"
+                        />
                     </template>
                 </v-list>
             </v-navigation-drawer>

@@ -1,51 +1,53 @@
 {
-  "name": "cochat",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "dependencies": {
-    "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
-    "@pinia/nuxt": "^1.0.1",
-    "@sidebase/nuxt-auth": "1.3.1",
-    "bcryptjs": "^3.0.3",
-    "cytoscape": "^3.34.0",
-    "dotenv": "^17.4.2",
-    "drizzle-orm": "1.0.0-rc.4",
-    "github": "link:next-auth/providers/github",
-    "katex": "^0.18.4",
-    "markstream-vue": "^1.0.9",
-    "mermaid": "^11.16.1",
-    "next-auth": "^4.24.15",
-    "nuxt": "^4.5.1",
-    "openai": "^7.4.0",
-    "pg": "^8.22.0",
-    "pinia": "^4.0.2",
-    "pinia-plugin-persistedstate": "^4.7.1",
-    "stream-diffs": "^0.0.2",
-    "typescript": "^7.0.2",
-    "vue": "^3.5.40",
-    "vue-router": "^5.2.0",
-    "vuetify-nuxt-module": "1.0.0-rc.4"
-  },
-  "devDependencies": {
-    "@types/cytoscape": "^3.31.0",
-    "@types/pg": "^8.20.4",
-    "drizzle-kit": "1.0.0-rc.4",
-    "oxfmt": "^0.63.0",
-    "oxlint": "^1.77.0",
-    "sass-embedded": "^1.100.0",
-    "tsx": "^4.23.8",
-    "vuetify": "^4.1.7"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "next-auth@4.24.15": "patches/next-auth@4.24.15.patch"
+    "name": "cochat",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare",
+        "lint": "oxlint",
+        "format": "oxfmt --write"
+    },
+    "dependencies": {
+        "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
+        "@pinia/nuxt": "^1.0.1",
+        "@sidebase/nuxt-auth": "1.3.1",
+        "bcryptjs": "^3.0.3",
+        "cytoscape": "^3.34.0",
+        "dotenv": "^17.4.2",
+        "drizzle-orm": "1.0.0-rc.4",
+        "github": "link:next-auth/providers/github",
+        "katex": "^0.18.4",
+        "markstream-vue": "^1.0.9",
+        "mermaid": "^11.16.1",
+        "next-auth": "^4.24.15",
+        "nuxt": "^4.5.1",
+        "openai": "^7.4.0",
+        "pg": "^8.22.0",
+        "pinia": "^4.0.2",
+        "pinia-plugin-persistedstate": "^4.7.1",
+        "stream-diffs": "^0.0.2",
+        "typescript": "^7.0.2",
+        "vue": "^3.5.40",
+        "vue-router": "^5.2.0",
+        "vuetify-nuxt-module": "1.0.0-rc.4"
+    },
+    "devDependencies": {
+        "@types/cytoscape": "^3.31.0",
+        "@types/pg": "^8.20.4",
+        "drizzle-kit": "1.0.0-rc.4",
+        "oxfmt": "^0.63.0",
+        "oxlint": "^1.77.0",
+        "sass-embedded": "^1.100.0",
+        "tsx": "^4.23.8",
+        "vuetify": "^4.1.7"
+    },
+    "pnpm": {
+        "patchedDependencies": {
+            "next-auth@4.24.15": "patches/next-auth@4.24.15.patch"
+        }
     }
-  }
 }

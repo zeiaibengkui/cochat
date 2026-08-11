@@ -1,3 +1,4 @@
 {
-  "ignorePatterns": []
+    "tabWidth": 4,
+    "ignorePatterns": ["node_modules", ".nuxt", "dist", ".output", "pnpm-lock.yaml", "*.min.*"]
 }

@@ -7,7 +7,7 @@ import { db } from "../db";
 import * as schema from "../db/schema/user";
 
 export function useDrizzle() {
-  return drizzle(db);
+    return drizzle(db);
 }
 
 export type User = typeof schema.users.$inferSelect;

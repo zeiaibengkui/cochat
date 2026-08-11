@@ -17,8 +17,14 @@ export function useGraphNav() {
         const path = store.currentPath;
         if (!meta || !path.length) return;
         switch (e.key) {
-            case "PageUp":   e.preventDefault(); if (meta.depth > 0) store.setFocused(path[meta.depth - 1]); break;
-            case "PageDown": e.preventDefault(); if (meta.depth < path.length - 1) store.setFocused(path[meta.depth + 1]); break;
+            case "PageUp":
+                e.preventDefault();
+                if (meta.depth > 0) store.setFocused(path[meta.depth - 1]);
+                break;
+            case "PageDown":
+                e.preventDefault();
+                if (meta.depth < path.length - 1) store.setFocused(path[meta.depth + 1]);
+                break;
             case "Home": {
                 e.preventDefault();
                 const paths = store.allPaths;
@@ -40,7 +46,11 @@ export function useGraphNav() {
         }
     }
 
-    onMounted(() => { store.loadGraphs(); store.loadTree(); document.addEventListener("keydown", handleKeydown); });
+    onMounted(() => {
+        store.loadGraphs();
+        store.loadTree();
+        document.addEventListener("keydown", handleKeydown);
+    });
     onUnmounted(() => document.removeEventListener("keydown", handleKeydown));
 
     return {
