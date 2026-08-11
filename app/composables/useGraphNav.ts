@@ -1,4 +1,5 @@
 import type { graphNode } from "~~/server/db/schema/graph";
+import { useGraphStore } from "~/store/graph";
 
 export interface GraphTree {
     nodes: graphNode[];

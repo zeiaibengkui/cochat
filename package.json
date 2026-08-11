@@ -45,9 +45,7 @@
         "tsx": "^4.23.8",
         "vuetify": "^4.1.7"
     },
-    "pnpm": {
-        "patchedDependencies": {
-            "next-auth@4.24.15": "patches/next-auth@4.24.15.patch"
-        }
+    "patchedDependencies": {
+        "next-auth@4.24.15": "patches/next-auth@4.24.15.patch"
     }
 }
