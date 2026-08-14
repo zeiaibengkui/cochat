@@ -44,8 +44,5 @@
         "sass-embedded": "^1.100.0",
         "tsx": "^4.23.8",
         "vuetify": "^4.1.7"
-    },
-    "patchedDependencies": {
-        "next-auth@4.24.15": "patches/next-auth@4.24.15.patch"
     }
 }
